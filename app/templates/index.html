@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireNation - Job Posting Platform</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-primary text-white text-center py-3 ">
+    <h1>HireNation.ng</h1>
+</header>
+
+<!-- Banner Image with Overlay -->
+<div class="banner position-relative" style="background-image: url('https://images.pexels.com/photos/7688435/pexels-photo-7688435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); height: 400px; background-size: cover; background-position: center;">
+    <!-- Overlay -->
+    <div class="overlay position-absolute w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5);"></div>
+
+    <!-- Text Content on Banner -->
+    <div class="text-center text-white position-relative" style="padding-top: 150px; z-index: 1;">
+        <h2>Empowering Careers, One Job at a Time</h2>
+        <p>Find your next role or recruit the best talent with HireNation</p>
+    </div>
+</div>
+
+<!-- Job Postings Section -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">Latest Job Openings</h2>
+    <div class="row">
+    {% for job in jobs%}
+      {% include 'jobitems.html' %}
+    {% endfor %}
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>© 2024 HireNation. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
