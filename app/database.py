@@ -11,7 +11,7 @@ def create_db_connection():
         connection = pymysql.connect(
         host=os.getenv('MYSQL_HOST'),
         user=os.getenv('MYSQL_USER'),
-        port=14908,
+        port=os.getenv('MYSQL_PORT'),
         password=os.getenv('MYSQL_PASSWORD'),
         db=os.getenv('MYSQL_DB'),
         connect_timeout=10  # Timeout in seconds    
