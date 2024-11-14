@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "cstrap.flask-snippets",
-        "wilfison.haml-boostrap"
+        "wilfison.haml-boostrap",
+        "wholroyd.jinja"
     ]
 }

@@ -1,6 +1,9 @@
 from flask import Blueprint, render_template, jsonify
 
 from app import create_app
+from app.database import fetch_jobs
+#from app.database import fetch_jobs
+
 
 # Define a Blueprint for your app
 bp = Blueprint('app', __name__)
@@ -42,6 +45,12 @@ def home():
 @bp.route('/api/jobs')
 def list_jobs():
     return jsonify(JOBS)  # Return the jobs in JSON format
+
+@bp.route('/api/data')
+def get_data():
+    jobs = fetch_jobs()
+# Return the fetched data as JSON
+    return jsonify(jobs)
 
 if __name__ == "__main__":
     app = create_app()  # Create the app instance
