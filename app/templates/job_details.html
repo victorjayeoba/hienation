@@ -1,0 +1,21 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+                <li class="alert alert-{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+<h1>{{ job["title"] }}</h1>
+<p>Location: {{ job["location"] }}</p>
+<p>Experience: {{ job["exp_requirement"] if job["exp_requirement"] else "N/A" }}</p>
+<p>Salary: {{ job["currency"] + " " + job["salary"]|string if job["salary"] else "N/A" }}</p>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="file" name="resume" required>
+    <button type="submit">Submit Application</button>
+</form>
